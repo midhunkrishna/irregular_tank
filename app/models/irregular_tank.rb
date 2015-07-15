@@ -1,14 +1,21 @@
 class IrregularTank
   TANK_MATERIAL = "M"
   WATER_MATERIAL = "W"
-  attr_accessor :heights, :height, :width, :tank_matrix
+  attr_accessor :initial_heights, :tank_matrix, :volume
   
   def initialize heights
+    @initial_heights = heights + []
     @heights = heights
     @tank_matrix = make_tank
     @volume = calculate_volume
-    @height = @tank_matrix.size
-    @width = @heights.size
+  end
+
+  def width
+    @heights.size
+  end
+
+  def height
+    @tank_matrix.size
   end
 
   def any_non_zero?
@@ -54,6 +61,6 @@ class IrregularTank
   end
 
   def all_zero?
-    @heights.uniq.length == 1 and heights.first == 0
+    @heights.uniq.length == 1 and @heights.first == 0
   end
 end

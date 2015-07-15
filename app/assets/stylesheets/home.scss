@@ -1,3 +1,23 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.nav-wrapper{
+    .brand-logo{
+        img{
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
+    }
+}
+
+.floater{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+.text-shadow{
+    text-shadow: 1px 1px 6px #222;
+}

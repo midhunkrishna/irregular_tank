@@ -1,0 +1,28 @@
+%nav
+  .nav-wrapper
+    %a.brand-logo{:href => "#"}
+      %img{:src => @imaging_service.image.resize(40, 40).to_data_url}
+      The Irregular Tank  
+.container
+  .row
+    .col.s12.m8.l8.offset-m2.offset-l2
+      .card.blue-grey.darken-1
+        .card-content.white-text
+          %span.card-title Irregular Tank Heights
+          .card-title
+            = @irregular_tank.initial_heights.join(" ")
+        .card-action
+          %a{:href => "https://boiling-tor-9383.herokuapp.com"} Source
+  .row
+    .col.s12.m8.offset-m2.offset-l2.l8
+      %h2.header
+      .card
+        .card-image
+          %img{:src => @imaging_service.image.resize(400, 400).to_data_url}
+            %span.card-title.text-shadow Irregular Tank Cross Section
+        .card-content
+          %h4
+            = "Total Volume Contained: #{@irregular_tank.volume} cubic units."
+.floater            
+  %a.btn-floating.btn-large.waves-effect.waves-light.red{:onclick => "javascript:window.location.reload()"}
+    %i.material-icons loop
