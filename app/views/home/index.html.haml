@@ -15,7 +15,13 @@
           .card-title
             = @irregular_tank.initial_heights.join(" ")
         .card-action
-          %a{:href => "https://boiling-tor-9383.herokuapp.com"} Source
+          %a.activator View JSON
+        .card-reveal
+          %span.card-title.grey-text.text-darken-4
+            JSON obtained from endpoint
+            %i.material-icons.right close
+            %p
+              = @tank_service.request_body
   .row
     .col.s12.m8.offset-m2.offset-l2.l8
       %h2.header

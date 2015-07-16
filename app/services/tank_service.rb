@@ -1,7 +1,15 @@
 class TankService
+  
+  def initialize
+    @heights_stream = ActiveSupport::JSON.decode(connection.get.body)
+  end
+  
   def heights
-    heights_stream = ActiveSupport::JSON.decode(connection.get.body)
-    heights_stream["heights"]
+    @heights_stream["heights"].dup
+  end
+
+  def request_body
+    @heights_stream
   end
   
   private

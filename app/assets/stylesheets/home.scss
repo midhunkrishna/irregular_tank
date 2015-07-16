@@ -24,3 +24,11 @@
 .text-shadow{
     text-shadow: 1px 1px 6px #222;
 }
+
+.container{
+    .row{
+        .activator{
+            cursor: pointer;
+        }
+    }
+}
